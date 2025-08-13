@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Website - Kanaya Raisa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div>naya's web</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#school">My School</a></li>
+      <li><a href="#friends">My Friends</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <h1 style="color:#8d0b0b;">Welcome to My Website</h1>
+    <p style="max-width:600px; margin:auto;">
+      This is my personal space where I share about myself, my school, and my gang.
+    </p>
+  </section>
+
+  <section id="about">
+    <h2 style="color:#8f0c0c;">About Me</h2>
+    <p style="max-width:600px; margin:auto;">
+      Hi, nama saya kanaya raisa putri, tahun ini aku berumur 17 tahun. Yes, saya lahir pada tahun 2008, 25 November. Saya memiliki hobi olahraga, salah satu olahraga yang saya suka adalah lari, saya bisa lari dengan kecepatan yang konsisten, juga saya suka mendengarkan musik, genre yang paling saya suka adalah R&B, Rock, dan shoegaze. If youre into those genre, we can do spotify blend!
+    </p>
+  </section>
+
+  <section id="school">
+    <div>
+      <h2 style="color:#850808;">My School</h2>
+      <p>SMKN 6 Kota Tangerang Selatan lahir pada tahun 2016, memiliki 3 Jurusan, yaitu Rekayasa Perangkat Lunak, Teknik Komputer dan Jaringan, dan Broadcasting.</p>
+      <a href="https://smkn6tangsel.sch.id" target="_blank" style="color:#8a0707; text-decoration:none; font-weight:bold;">Visit Website</a>
+    </div>
+    <img src="logo.jpeg" alt="My School" />
+  </section>
+
+
+  <section id="friends">
+    <h2 style="color:rgb(150, 0, 0);">Friends</h2>
+    <div>
+      <div id="slider">
+        <div>
+          <img src="aira.jpg" alt="aira" />
+          <p> Aira - Shes pretty, and humble.</p>
+        </div>
+        <div>
+          <img src="kezya.jpg" alt="keja" />
+          <p>Kezya - Cantik, jail, unik.</p>
+        </div>
+        <div>
+          <img src="ewen.jpg" alt="ewen" />
+          <p>Ewen - Effortlessly pretty, likes manhwas.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px;">
+      <span class="dot" onclick="moveSlide(0)"></span>
+      <span class="dot" onclick="moveSlide(1)"></span>
+      <span class="dot" onclick="moveSlide(2)"></span>
+    </div>
+  </section>
+  <footer id="contacts">
+    <p>© 2025 Naya's Website | All Rights Reserved</p>
+    <div style="margin-top:10px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0551169298!2d106.68852590961069!3d-6.256469793705894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa5bcca39e31%3A0xeeaf8e0645d4e1b4!2sJl.%20Gelora%20IV%20No.52%2C%20Pd.%20Kacang%20Tim.%2C%20Kec.%20Pd.%20Aren%2C%20Kota%20Tangerang%20Selatan%2C%20Banten%2015226!5e0!3m2!1sid!2sid!4v1755044733978!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        width="250"
+        height="150"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slider = document.getElementById('slider');
+    const dots = document.getElementsByClassName('dot');
+
+    function moveSlide(index) {
+      currentSlide = index;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.toggle('active', i === index);
+      }
+    }
+    moveSlide(0);
+
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

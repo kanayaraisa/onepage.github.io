@@ -1,0 +1,132 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+nav {
+  background-color: #820404;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav div {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  padding: 100px 20px 50px;
+  text-align: center;
+  will-change: opacity, transform;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#about, #friends {
+  background-color: #eaf4ff;
+}
+
+#school {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#school div {
+  max-width: 400px;
+  text-align: center;
+}
+#school img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+#friends > div > #slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+#friends > div {
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+#slider > div {
+  min-width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+#slider img {
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+#slider p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dot.active {
+  background-color: #8a0909;
+}
+
+footer {
+  background-color: #880808;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+footer iframe {
+  border: 0;
+  border-radius: 8px;
+}
