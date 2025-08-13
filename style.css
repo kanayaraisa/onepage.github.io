@@ -14,7 +14,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 93%;
+  width: 90%;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -131,3 +131,4 @@ footer iframe {
   border-radius: 8px;
 
 }
+
